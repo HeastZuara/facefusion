@@ -1,6 +1,12 @@
 from logging import Logger, basicConfig, getLogger
 
-import facefusion.choices
+try:
+	try:
+		import facefusion.choices
+	except ModuleNotFoundError:
+		facefusion.choices = None  # Handle the missing module gracefully
+except ImportError:
+	facefusion.choices = None  # Handle the missing module gracefully
 from facefusion.common_helper import get_first, get_last
 from facefusion.types import LogLevel
 

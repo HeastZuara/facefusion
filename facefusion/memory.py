@@ -1,4 +1,4 @@
-from facefusion.common_helper import is_macos, is_windows
+from facefusion.common_helper import is_macos, is_windows # type: ignore
 
 if is_windows():
 	import ctypes

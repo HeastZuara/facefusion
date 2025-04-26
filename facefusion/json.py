@@ -2,8 +2,13 @@ import json
 from json import JSONDecodeError
 from typing import Optional
 
-from facefusion.filesystem import is_file
-from facefusion.types import Content
+import os
+
+def is_file(path: str) -> bool:
+	return os.path.isfile(path)
+from typing import Any, Dict
+
+Content = Dict[str, Any]  # Define Content locally as a dictionary with string keys and any values
 
 
 def read_json(json_path : str) -> Optional[Content]:
